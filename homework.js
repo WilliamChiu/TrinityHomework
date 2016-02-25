@@ -106,7 +106,16 @@ function parseEvents() {
     //console.log(description);
     for (i = 0; i < dtstart.length; i++) {
         if (dtend[i] > date) {
-            document.write(dtend[i] + ':  ' + summary[i] + ((description[i] != undefined) ? ("<br>" + description[i]) : "") + "<br><br>");
+            var assignment = document.createElement("div");
+            assignment.setAttribute("class", "box");
+            var header = document.createElement("p");
+            header.setAttribute("class", "heading2");
+            header.innerHTML = (dtend[i] + ':  ' + summary[i]);
+            var description = document.createElement("p");
+            description.innerHTML = ((description[i] != undefined ? ("<br>" + description[i]) : ""));
+            assignment.appendChild(header);
+            assignment.appendChild(description);
+            document.body.appendChild(assignment);
         }
     }
 
