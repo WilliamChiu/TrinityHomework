@@ -105,7 +105,7 @@ function parseEvents() {
     //console.log(summary);
     //console.log(description);
     for (i = 0; i < dtstart.length; i++) {
-        if (dtend[i] > date) {
+        if (dtend[i] === date) {
             var assignment = document.createElement("div");
             assignment.setAttribute("class", "box");
             var header = document.createElement("p");
