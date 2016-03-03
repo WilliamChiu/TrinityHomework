@@ -12,6 +12,7 @@ if (mm < 10) {
 }
 
 var date = yyyy + '' + mm + '' + dd;
+var mode = "active";
 
 //console.log(date);
 
@@ -105,7 +106,7 @@ function parseEvents() {
     //console.log(summary);
     //console.log(description);
     for (i = 0; i < dtstart.length; i++) {
-        if (dtend[i] === date) {
+        if (mode === "active" && dtend[i] === date) {
             var assignment = document.createElement("div");
             assignment.setAttribute("class", "box");
             var header = document.createElement("p");
